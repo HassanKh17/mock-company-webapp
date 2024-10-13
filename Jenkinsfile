@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git branch: 'main', url: 'https://github.com/hassankh17/mock-company-webapp.git'
+                git branch: 'main', url: 'https://github.com/HassanKh17/mock-company-webapp.git'
             }
         }
 
