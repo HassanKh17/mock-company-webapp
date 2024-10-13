@@ -12,17 +12,16 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      # Set up JDK 11 with a specific distribution
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
-          distribution: 'temurin'  # You can also use 'adopt' or 'zulu'
+          distribution: 'temurin'
           java-version: '11'
 
       - name: Cache Gradle packages
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
@@ -38,7 +37,7 @@ jobs:
         run: ./gradlew test
 
       - name: Archive JAR files
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: build/libs/*.jar
